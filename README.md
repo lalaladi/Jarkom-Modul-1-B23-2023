@@ -41,7 +41,8 @@ Berikut merupakan hasil jawaban pada terminal :<br>
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
 **Langkah Penyelesaian Soal 2 :** <br>
-Setelah membuka file sumber yang telah diterima melalui aplikasi Wireshark, kita menerapkan filter "http.host" untuk menyaring hasil yang berkaitan dengan host HTTP. Kemudian, kita melakukan klik kanan pada salah satu hasil dari filter tersebut. Setelah itu, kita memilih opsi "Follow" dan "TCP Stream". Hasilnya, tampilan yang muncul adalah tampilan dari aliran TCP yang telah diambil dari paket-paket yang sesuai dengan filter tersebut.
+Setelah membuka file sumber yang telah diterima melalui aplikasi Wireshark, kita menerapkan filter "http.host" untuk menyaring hasil yang berkaitan dengan host HTTP. Kemudian, kita melakukan klik kanan pada salah satu hasil dari filter tersebut. Setelah itu, kita memilih opsi "Follow" dan "TCP Stream". Hasilnya, tampilan yang muncul adalah tampilan dari aliran TCP yang telah diambil dari paket-paket yang sesuai dengan filter tersebut.<br>
+![Foto](./img/Prak1No2.png)
 
 ## **Soal Nomor 3**
 Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
@@ -64,9 +65,10 @@ Berikut merupakan hasil jawaban pada terminal :<br>
 ## **Soal Nomor 4** <br>
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
 Jawaban : 0x18e5 <br>
-Kita lakukan filter Frame.number==130 lalu kita bisa langsung cek header checksumnya 
 
 **Langkah Penyelesaian Soal 4 :** 
+Kita lakukan filter Frame.number==130 lalu kita bisa langsung cek header checksumnya <br>
+![Foto](./img/Prak1No4.png)
 
 ## **Soal Nomor 5**
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.<br>
@@ -109,6 +111,22 @@ Berikut merupakan hasil jawaban pada terminal :<br>
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.<br>
 Jawaban : JDRNJA<br>
 **Langkah Penyelesaian Soal 6 :**
+Disini kita memiliki dua clue yaitu server SOURCE ADDRESS 7812 is invalid dan a1 e5 u21 <br>
+server SOURCE ADDRESS 7812 : dari sini kita hanya perlu melihat source address paket nomor 7812<br>
+a1 e5 u21 : dan untuk ini kita tau bahwa a adalah huruf 1 dalam alfabet, e huruf ke 5 dalam alfabet, dan juga u huruf ke 21 dalam alfabet. Jadi dapat disimpulkan kita harus mengubah angka menjadi alfabet<br>
+<br>
+Jadi yang pertama kita lakukan adalah melakukan search filter yaitu frame.number==7812<br>
+![Foto](./img/Prak1No6.png)
+Lalu kita cek source addressnya yaitu 104.18.14.101. kita akan lakukan perubahan menjadi alfabet yang sudah diketahui pada clue kedua.<br>
+10 = J<br>
+4 = D<br>
+18 = R<br>
+14 = N<br>
+10 = J<br>
+1 = A<br>
+Maka hasilnya adalah JDRNJA<br>
+
+
 
 ## **Soal Nomor 7**
 Berapa jumlah packet yang menuju IP 184.87.193.88?<br>
@@ -122,7 +140,9 @@ Karena kita ingin menghitung jumlah packet yang **menuju** ke IP 184.87.193.88 m
 ## **Soal Nomor 8** <br>
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)<br>
 Jawaban : tcp.dstport == 80 || udp.dstport == 80<br>
-**Langkah Penyelesaian Soal 8 :**
+**Langkah Penyelesaian Soal 8 :** <br>
+kita lakukan filter tcp.dstport == 80 || udp.dstport == 80 karena kita mengambil semua protokol jadi kita lakukan tcp dan udp <br>
+![Foto](./img/Prak1No8.png)
 
 ## **Soal Nomor 9**
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!<br>
@@ -138,7 +158,8 @@ Untuk mengambil packet yang berasal dari alamat 10.51.40.1 dilakukan sebagai ber
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet<br>
 Jawaban : dhafin:kesayangank0k0<br>
 **Langkah Penyelesaian Soal 10 :**
-
+Kita lakukan filter dengan telnet, lalu kita coba coba terhadap hasil filterannya dan lakukan follow tcp stream, lalu mendapatkan hasil seperti dibawah ini<br>
+![Foto](./img/Prak1No10.png)
 
 # **Kendala Selama Pengerjaan**
 Berikut merupakan beberapa kendala dan kesulitan yang kami alami dalam pengerjaan Praktikum Modul 1 Jaringan Komputer, yakni :
