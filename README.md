@@ -15,9 +15,10 @@ User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
 - **Soal Nomor 1A :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 258040667
-- **Soal Nomor 1B :** <br>
+- **Soal Nomor 1B :** 
 Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 1044861039<br>
+<br>
 **Langkah Penyelesaian Soal 1A dan 1B :** <br>
   Awalnya buka **soal1.pcap**, lalu cari pada **display filter -> ketik FTP**. Karena yang dicari yang melakukan aktivitas unggah file, cari packet yang **request : STOR** karena terjadi peng-upload-an file ke FTP server atau bisa dengan **ftp contains "STOR"**, maka akan didapat filenya adalah : **c75-GrabThePhiser.zip**. Klik pada paket tersebut dan pada bagian bawah pada Transmission Control Protocol terdapat informasi mengenai sequence dan acknowledge number (raw) sebagai berikut :
 ![1(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/154ccf20-2e70-4e50-911b-2c36244e6f66)
@@ -26,16 +27,17 @@ Jawaban : 1044861039<br>
 - **Soal Nomor 1C :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut<br>
 Jawaban : 1044861039
-- **Soal Nomor 1D :** <br>
+- **Soal Nomor 1D :** 
 Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?<br>
 Jawaban : 258040696<br>
+<br>
 **Langkah Penyelesaian Soal 1C dan 1D :** <br>
-Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c75-GrabThePhiser.zip pada response-nya(atau bisa juga dengan mengetikkan pada display **frame constains “GrabThePhiser”**), lalu klik packet itu dan lihat sequence number (raw) dan acknowledge number (raw) Transmission Control Protocol:
+Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c75-GrabThePhiser.zip pada response-nya(atau bisa juga dengan mengetikkan pada display **frame constains “GrabThePhiser”**), lalu klik packet itu dan lihat sequence number (raw) dan acknowledge number (raw) di Transmission Control Protocol:
 ![1(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f2c94288-6446-4abf-a2df-24f484aeb02d)
 ![1(d)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e38d081a-79b3-4f3a-a6e8-7b465ce2da7a)
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907)<br>
+![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907)
 ## **Soal Nomor 2**
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
