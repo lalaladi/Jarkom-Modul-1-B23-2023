@@ -36,6 +36,7 @@ Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c7
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907) <br>
+
 ## **Soal Nomor 2** <br>
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
@@ -57,7 +58,7 @@ Jawaban : UDP<br>
 ![3 (2)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c97c8122-eef0-4924-b7a5-41040b1a0bf0)
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban3](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f3ab4d0c-dd59-48b6-8230-fa213ba3a035)
+![jawaban3](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f3ab4d0c-dd59-48b6-8230-fa213ba3a035) <br>
 
 ## **Soal Nomor 4** <br>
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
