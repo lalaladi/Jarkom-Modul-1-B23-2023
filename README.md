@@ -32,7 +32,7 @@ Jawaban : 258040696<br>
 
 ## **Soal Nomor 2**
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
-Jawaban : <br>
+Jawaban : gunicorn<br>
 **Langkah Penyelesaian Soal 2 :**
 
 ## **Soal Nomor 3**
@@ -48,7 +48,7 @@ Jawaban : UDP<br>
 
 ## **Soal Nomor 4**
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
-Jawaban : <br>
+Jawaban : 0x18e5 <br>
 **Langkah Penyelesaian Soal 4 :**
 
 ## **Soal Nomor 5**
@@ -68,7 +68,7 @@ Jawaban : 74.53.140.153<br>
 
 ## **Soal Nomor 6**
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.<br>
-Jawaban : <br>
+Jawaban : JDRNJA<br>
 **Langkah Penyelesaian Soal 6 :**
 
 ## **Soal Nomor 7**
@@ -78,7 +78,7 @@ Jawaban : 6<br>
 
 ## **Soal Nomor 8**
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)<br>
-Jawaban : <br>
+Jawaban : tcp.dstport == 80 || udp.dstport == 80<br>
 **Langkah Penyelesaian Soal 8 :**
 
 ## **Soal Nomor 9**
@@ -88,7 +88,7 @@ Jawaban :  ip.src == 10.51.40.1 && ip.dst != 10.39.55.34<br>
 
 ## **Soal Nomor 10**
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet<br>
-Jawaban : <br>
+Jawaban : dhafin:kesayangank0k0<br>
 **Langkah Penyelesaian Soal 10 :**
 
 # **Kendala Selama Pengerjaan**
