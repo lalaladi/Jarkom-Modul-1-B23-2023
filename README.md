@@ -35,7 +35,7 @@ Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c7
 ![1(d)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e38d081a-79b3-4f3a-a6e8-7b465ce2da7a)
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907)
+![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907) <br>
 ## **Soal Nomor 2** <br>
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
