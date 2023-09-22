@@ -15,11 +15,12 @@ User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
 - **Soal Nomor 1A :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 258040667<br>
-**Langkah Penyelesaian Soal 1A :**
 - **Soal Nomor 1B :** <br>
 Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 1044861039<br>
-**Langkah Penyelesaian Soal 1B :**
+**Langkah Penyelesaian Soal 1A dan 1B :**
+  Awalnya buka **soal1.pcap**, lalu cari pada **display filter -> ketik FTP**. Karena yang dicari yang melakukan aktivitas unggah file, cari packet yang **request : STOR** karena terjadi peng-upload-an file ke FTP server, maka akan didapat filenya adalah : **c75-GrabThePhiser.zip**. Klik pada paket tersebut dan pada bagian bawah pada Transmission Control Protocol terdapat informasi mengenai sequence dan acknowledge number (raw) sebagai berikut :
+
 - **Soal Nomor 1C :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut<br>
 Jawaban : 1044861039<br>
