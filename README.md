@@ -33,7 +33,7 @@ Jawaban : 258040696<br>
 Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c75-GrabThePhiser.zip pada response-nya(atau bisa juga dengan mengetikkan pada display **frame constains “GrabThePhiser”**), lalu klik packet itu dan lihat sequence number (raw) dan acknowledge number (raw) di Transmission Control Protocol:
 ![1(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f2c94288-6446-4abf-a2df-24f484aeb02d)
 ![1(d)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e38d081a-79b3-4f3a-a6e8-7b465ce2da7a)
-<br>
+
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907) <br>
 
