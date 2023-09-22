@@ -41,6 +41,7 @@ Berikut merupakan hasil jawaban pada terminal :<br>
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
 **Langkah Penyelesaian Soal 2 :** <br>
+Setelah membuka file sumber yang telah diterima melalui aplikasi Wireshark, kita menerapkan filter "http.host" untuk menyaring hasil yang berkaitan dengan host HTTP. Kemudian, kita melakukan klik kanan pada salah satu hasil dari filter tersebut. Setelah itu, kita memilih opsi "Follow" dan "TCP Stream". Hasilnya, tampilan yang muncul adalah tampilan dari aliran TCP yang telah diambil dari paket-paket yang sesuai dengan filter tersebut.
 
 ## **Soal Nomor 3**
 Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
@@ -63,6 +64,8 @@ Berikut merupakan hasil jawaban pada terminal :<br>
 ## **Soal Nomor 4** <br>
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
 Jawaban : 0x18e5 <br>
+Kita lakukan filter Frame.number==130 lalu kita bisa langsung cek header checksumnya 
+
 **Langkah Penyelesaian Soal 4 :** 
 
 ## **Soal Nomor 5**
