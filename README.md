@@ -80,14 +80,13 @@ Jawaban : 60<br>
 **Langkah Penyelesaian Soal 5A :** <br>
 Pilih salah satu packet dan pada **statistic -> Capture File Properties** lihat barisan Packets dan pada bagian Captures didapatkan hasilnya sebagai berikut :
 ![5(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e105e18e-4c0b-4722-8eed-2aba714de703)
-<br>
 <br>- **Soal Nomor 5B :** <br>
 Port berapakah pada server yang digunakan untuk service SMTP?<br>
 Jawaban : 25<br>
 **Langkah Penyelesaian Soal 5B :** <br>
 Untuk soal ini, kita dapat melihatnya pada modul 1 sebagai berikut :<br>
 ![gbr_modul](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f0d7d0bd-2a0e-4cbb-a4cf-431cd38a31ac)
-<br>
+
 <br>- **Soal Nomor 5C :** <br>
 Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
 Jawaban : 74.53.140.153<br>
@@ -98,7 +97,7 @@ Soal ini dapat dijawab dengan mengambil referensi dari **https://www.geeksforgee
 - 192.168.0.0 – 192.168.255.255<br>
 selain dari range diatas dapat disimpulkan sebagai IP public dan hanya IP 74.53.140.153 yang ditemukan sebagai IP public.
 ![5(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/922ad409-a198-4db5-8f33-7cc6660fa89d)
-<br>
+
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/71e5b3f2-902a-4e2e-8bec-89451af66ccd)
 
