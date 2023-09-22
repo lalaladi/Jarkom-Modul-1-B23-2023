@@ -15,7 +15,7 @@ User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
 - **Soal Nomor 1A :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 258040667
-- **Soal Nomor 1B :** 
+- **Soal Nomor 1B :** <br>
 Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 1044861039<br>
 <br>**Langkah Penyelesaian Soal 1A dan 1B :** <br>
@@ -26,11 +26,10 @@ Jawaban : 1044861039<br>
 - **Soal Nomor 1C :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut<br>
 Jawaban : 1044861039
-- **Soal Nomor 1D :** 
+- **Soal Nomor 1D :** <br>
 Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?<br>
 Jawaban : 258040696<br>
-<br>
-**Langkah Penyelesaian Soal 1C dan 1D :** <br>
+<br>**Langkah Penyelesaian Soal 1C dan 1D :** <br>
 Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c75-GrabThePhiser.zip pada response-nya(atau bisa juga dengan mengetikkan pada display **frame constains “GrabThePhiser”**), lalu klik packet itu dan lihat sequence number (raw) dan acknowledge number (raw) di Transmission Control Protocol:
 ![1(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f2c94288-6446-4abf-a2df-24f484aeb02d)
 ![1(d)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e38d081a-79b3-4f3a-a6e8-7b465ce2da7a)
@@ -80,12 +79,14 @@ Jawaban : 60<br>
 **Langkah Penyelesaian Soal 5A :** <br>
 Pilih salah satu packet dan pada **statistic -> Capture File Properties** lihat barisan Packets dan pada bagian Captures didapatkan hasilnya sebagai berikut :
 ![5(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e105e18e-4c0b-4722-8eed-2aba714de703)
+<br>
 - **Soal Nomor 5B :** <br>
 Port berapakah pada server yang digunakan untuk service SMTP?<br>
 Jawaban : 25<br>
 **Langkah Penyelesaian Soal 5B :** <br>
 Untuk soal ini, kita dapat melihatnya pada modul 1 sebagai berikut :<br>
 ![gbr_modul](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f0d7d0bd-2a0e-4cbb-a4cf-431cd38a31ac)
+<br>
 - **Soal Nomor 5C :** <br>
 Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
 Jawaban : 74.53.140.153<br>
