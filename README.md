@@ -20,7 +20,7 @@ Jawaban : 258040667<br>
 Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
 Jawaban : 1044861039<br>
 **Langkah Penyelesaian Soal 1B :**
-  - **Soal Nomor 1C :** <br>
+- **Soal Nomor 1C :** <br>
 Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut<br>
 Jawaban : 1044861039<br>
 **Langkah Penyelesaian Soal 1C :**
@@ -60,7 +60,7 @@ Jawaban : 60<br>
 Port berapakah pada server yang digunakan untuk service SMTP?<br>
 Jawaban : 25<br>
 **Langkah Penyelesaian Soal 5B :**
-  - **Soal Nomor 5C :** <br>
+- **Soal Nomor 5C :** <br>
 Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
 Jawaban : 74.53.140.153<br>
 **Langkah Penyelesaian Soal 5C :**
