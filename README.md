@@ -56,14 +56,14 @@ Jawaban : UDP<br>
 <br>**Langkah Penyelesaian Soal 3B :** <br>
   Untuk menyelesaikannya kita gunakan perintah ini pada Display Filter **(ip.src == 239.255.255.250 || ip.dst == 239.255.255.250) && udp.port == 3702** sehingga didapatkan:
 ![3 (2)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c97c8122-eef0-4924-b7a5-41040b1a0bf0)
-<br>
+
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban3](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f3ab4d0c-dd59-48b6-8230-fa213ba3a035) <br>
 
 ## **Soal Nomor 4** <br>
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
 Jawaban : 0x18e5 <br>
-**Langkah Penyelesaian Soal 4 :** <br>
+**Langkah Penyelesaian Soal 4 :** 
 
 ## **Soal Nomor 5**
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.<br>
