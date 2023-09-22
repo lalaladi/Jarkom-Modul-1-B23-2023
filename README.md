@@ -36,7 +36,7 @@ Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c7
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907)
-## **Soal Nomor 2**
+## **Soal Nomor 2** <br>
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
 Jawaban : gunicorn<br>
 **Langkah Penyelesaian Soal 2 :** <br>
@@ -46,20 +46,20 @@ Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal be
 - **Soal Nomor 3A :** <br>
 Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?<br>
 Jawaban : 21<br>
-**Langkah Penyelesaian Soal 3A :** <br>
+<br>**Langkah Penyelesaian Soal 3A :** <br>
   Kita buka **soal3.pcap** dan pada display capture di Wireshark ketik **(ip.src == 239.255.255.250 || ip.dst == 239.255.255.250) && udp.port == 3702** -> pilih Statistics -> Capture File Properties maka akan terlihat pada bagian banyak packet yang tercapture yakni pada Displayed untuk Packets sebagai berikut :
 ![3(1)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/53f3109b-f58e-4757-b9f5-3b130f9afe3c)
 - **Soal Nomor 3B :** <br>
 Protokol layer transport apa yang digunakan?<br>
 Jawaban : UDP<br>
-**Langkah Penyelesaian Soal 3B :** <br>
+<br>**Langkah Penyelesaian Soal 3B :** <br>
   Untuk menyelesaikannya kita gunakan perintah ini pada Display Filter **(ip.src == 239.255.255.250 || ip.dst == 239.255.255.250) && udp.port == 3702** sehingga didapatkan:
 ![3 (2)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c97c8122-eef0-4924-b7a5-41040b1a0bf0)
 <br>
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban3](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f3ab4d0c-dd59-48b6-8230-fa213ba3a035)
 
-## **Soal Nomor 4**
+## **Soal Nomor 4** <br>
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
 Jawaban : 0x18e5 <br>
 **Langkah Penyelesaian Soal 4 :** <br>
@@ -80,14 +80,14 @@ Jawaban : 60<br>
 Pilih salah satu packet dan pada **statistic -> Capture File Properties** lihat barisan Packets dan pada bagian Captures didapatkan hasilnya sebagai berikut :
 ![5(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e105e18e-4c0b-4722-8eed-2aba714de703)
 <br>
-- **Soal Nomor 5B :** <br>
+<br>- **Soal Nomor 5B :** <br>
 Port berapakah pada server yang digunakan untuk service SMTP?<br>
 Jawaban : 25<br>
 **Langkah Penyelesaian Soal 5B :** <br>
 Untuk soal ini, kita dapat melihatnya pada modul 1 sebagai berikut :<br>
 ![gbr_modul](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f0d7d0bd-2a0e-4cbb-a4cf-431cd38a31ac)
 <br>
-- **Soal Nomor 5C :** <br>
+<br>- **Soal Nomor 5C :** <br>
 Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
 Jawaban : 74.53.140.153<br>
 **Langkah Penyelesaian Soal 5C :** <br>
@@ -101,7 +101,7 @@ selain dari range diatas dapat disimpulkan sebagai IP public dan hanya IP 74.53.
 Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/71e5b3f2-902a-4e2e-8bec-89451af66ccd)
 
-## **Soal Nomor 6**
+## **Soal Nomor 6** <br>
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.<br>
 Jawaban : JDRNJA<br>
 **Langkah Penyelesaian Soal 6 :**
@@ -109,13 +109,13 @@ Jawaban : JDRNJA<br>
 ## **Soal Nomor 7**
 Berapa jumlah packet yang menuju IP 184.87.193.88?<br>
 Jawaban : 6<br>
-**Langkah Penyelesaian Soal 7 :** <br>
+<br>**Langkah Penyelesaian Soal 7 :** <br>
 Karena kita ingin menghitung jumlah packet yang **menuju** ke IP 184.87.193.88 maka kita menggunakan  dst(untuk destination) dengan mengetikkan pada Display Filter **ip.dst == 184.87.193.88** -> statistic -> Capture File Properties.
 ![7](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b74cc045-0c67-45ac-a0a6-3300c6d40375)
 <br>
-Berikut merupakan hasil jawaban pada terminal :<br>
+<br>Berikut merupakan hasil jawaban pada terminal :<br>
 ![jawaban7](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c70b0ded-2068-4947-92da-c3ae441ce525)<br>
-## **Soal Nomor 8**
+## **Soal Nomor 8** <br>
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)<br>
 Jawaban : tcp.dstport == 80 || udp.dstport == 80<br>
 **Langkah Penyelesaian Soal 8 :**
@@ -123,14 +123,14 @@ Jawaban : tcp.dstport == 80 || udp.dstport == 80<br>
 ## **Soal Nomor 9**
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!<br>
 Jawaban :  ip.src == 10.51.40.1 && ip.dst != 10.39.55.34<br>
-**Langkah Penyelesaian Soal 9 :** <br>
+<br>**Langkah Penyelesaian Soal 9 :** <br>
 Untuk mengambil packet yang berasal dari alamat 10.51.40.1 dilakukan sebagai berikut : <br>**ip.src == 10.51.40.1** dan untuk packet yang tidak menuju ke alamat 10.39.55.34 dilakukan dengan : **ip.dst != 10.39.55**. Lalu, karena diminta untuk menerapkan syarat keduanya maka dapat dituliskan pada Display Filter : **ip.src == 10.51.40.1 && ip.dst != 10.39.55.34**
 ![9](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/8b77f15d-e96e-42c4-8fc0-754cdcc96552)
 <br>
-Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban9](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/659e9755-67e9-465a-bd90-b63c679d6a77)
+<br>Berikut merupakan hasil jawaban pada terminal :<br>
+![jawaban9](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/659e9755-67e9-465a-bd90-b63c679d6a77) 
 
-## **Soal Nomor 10**
+## **Soal Nomor 10** <br>
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet<br>
 Jawaban : dhafin:kesayangank0k0<br>
 **Langkah Penyelesaian Soal 10 :**
