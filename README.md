@@ -80,6 +80,7 @@ Jawaban : 60<br>
 **Langkah Penyelesaian Soal 5A :** <br>
 Pilih salah satu packet dan pada **statistic -> Capture File Properties** lihat barisan Packets dan pada bagian Captures didapatkan hasilnya sebagai berikut :
 ![5(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e105e18e-4c0b-4722-8eed-2aba714de703)
+
 <br>- **Soal Nomor 5B :** <br>
 Port berapakah pada server yang digunakan untuk service SMTP?<br>
 Jawaban : 25<br>
