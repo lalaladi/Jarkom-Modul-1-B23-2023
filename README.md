@@ -11,155 +11,464 @@ Berikut adalah Repository dari Kelompok B23 untuk pengerjaan Praktikum Modul 1. 
 # **Dokumentasi dan Penjelasan Soal**
 Berikut adalah dokumentasi yang tiap soal dan penjelasan terkait perintah yang digunakan :
 ## **Soal Nomor 1**
-User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
-- **Soal Nomor 1A :** <br>
-Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
-Jawaban : 258040667
-- **Soal Nomor 1B :** <br>
-Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?<br>
-Jawaban : 1044861039<br>
-<br>**Langkah Penyelesaian Soal 1A dan 1B :** <br>
-  Awalnya buka **soal1.pcap**, lalu cari pada **display filter -> ketik FTP**. Karena yang dicari yang melakukan aktivitas unggah file, cari packet yang **request : STOR** karena terjadi peng-upload-an file ke FTP server atau bisa dengan **ftp contains "STOR"**, maka akan didapat filenya adalah : **c75-GrabThePhiser.zip**. Klik pada paket tersebut dan pada bagian bawah pada Transmission Control Protocol terdapat informasi mengenai sequence dan acknowledge number (raw) sebagai berikut :
-![1(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/154ccf20-2e70-4e50-911b-2c36244e6f66)
-![1(b)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/dee26afd-3c8c-436b-9b4b-85abec561b21) 
+Buatlah topologi dengan:
+Yudhistira – DNS Master
+Werkudara – DNS Slave
+Arjuna – Load Balancer
+Prabukusuma, Abimanyu, dan Wisanggeni – Web Server
+Nakula dan Sadewa – Client 
+<br>**Langkah Penyelesaian Soal 1 :** <br>
+a). 
+ 
 
-- **Soal Nomor 1C :** <br>
-Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut<br>
-Jawaban : 1044861039
-- **Soal Nomor 1D :** <br>
-Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?<br>
-Jawaban : 258040696<br>
-<br>**Langkah Penyelesaian Soal 1C dan 1D :** <br>
-Setelah ditemukan file yang diunggah, kita dapat mencari packet yang terdapat c75-GrabThePhiser.zip pada response-nya(atau bisa juga dengan mengetikkan pada display **frame constains “GrabThePhiser”**), lalu klik packet itu dan lihat sequence number (raw) dan acknowledge number (raw) di Transmission Control Protocol:
-![1(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f2c94288-6446-4abf-a2df-24f484aeb02d)
-![1(d)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e38d081a-79b3-4f3a-a6e8-7b465ce2da7a)
+b). Lakukan konfigurasi IP tiap node 
+Pandudewanata
+auto eth0
+iface eth0 inet dhcp
 
-Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban1](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b4c448ba-e5be-4410-8f5b-068df4800907) <br>
+auto eth1
+iface eth1 inet static
+	address 10.20.1.1
+	netmask 255.255.255.0
+auto eth2
+iface eth2 inet static
+	address 10.20.2.1
+	netmask 255.255.255.0
+auto eth3
+iface eth1 inet static
+	address 10.20.3.1
+	netmask 255.255.255.0
+Werkudara 
+auto eth0
+iface eth0 inet static
+	address 10.20.1.5
+	netmask 255.255.255.0
+	gateway 10.20.1.1
 
-## **Soal Nomor 2** <br>
-Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!<br>
-Jawaban : gunicorn<br>
-**Langkah Penyelesaian Soal 2 :** <br>
-Setelah membuka file sumber yang telah diterima melalui aplikasi Wireshark, kita menerapkan filter "http.host" untuk menyaring hasil yang berkaitan dengan host HTTP. Kemudian, kita melakukan klik kanan pada salah satu hasil dari filter tersebut. Setelah itu, kita memilih opsi "Follow" dan "TCP Stream". Hasilnya, tampilan yang muncul adalah tampilan dari aliran TCP yang telah diambil dari paket-paket yang sesuai dengan filter tersebut.<br>
-![Foto](./img/Prak1No2.png)
+Yudhistira
+auto eth0
+iface eth0 inet static
+	address 10.20.1.4
+	netmask 255.255.255.0
+	gateway 10.20.1.1
+
+Arjuna 
+auto eth0
+iface eth0 inet static
+	address 10.20.2.2
+	netmask 255.255.255.0
+	gateway 10.20.2.1
+Prabukusuma
+		auto eth0
+iface eth0 inet static
+	address 10.20.3.2
+	netmask 255.255.255.0
+	gateway 10.20.3.1
+ Abimanyu
+auto eth0
+iface eth0 inet static
+	address 10.20.3.3
+	netmask 255.255.255.0
+	gateway 10.20.3.1
+Wisanggeni
+auto eth0
+iface eth0 inet static
+	address 10.20.3.4
+	netmask 255.255.255.0
+	gateway 10.20.3.1
+Nakula
+auto eth0
+iface eth0 inet static
+	address 10.20.1.2
+	netmask 255.255.255.0
+	gateway 10.20.1.1
+
+Sadewa
+auto eth0
+iface eth0 inet static
+	address 10.20.1.3
+	netmask 255.255.255.0
+gateway 10.20.1.2
+	**Untuk tiap command yang ada dijalankan terlebih dahulu di terminal lalu simpan di /root/**
+c). Pada /root/.bashrc  dengan Prefix IP kelompok ini (B23) 
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.20.0.0/16
+
+d). Agar dapat terhubung ke internet melalui Pandudewanata ketik dalam /root/.bashrc tiap node ubuntu yang dibuat 
+ echo nameserver 192.168.122.1 > /etc/resolv.conf
+Lalu jika dilakukan ping google.com pada ubuntu yang dipilih akan terlihat seperti berikut 
+
+
+
+## **Soal Nomor 2**
+Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan alias www.arjuna.yyy.com dengan yyy merupakan kode kelompok.
+
+<br>**Langkah Penyelesaian Soal 2 :** <br>
+	a). Pada /root/.bashrc  di Yudhistira
+apt-get update
+		apt-get install bind9 -y
+	 b). Pembuatan Domain	
+Pada terminal Yudhistira ketik : nano /etc/bind/named.conf.local 
+Isi dengan : 
+```bash
+zone "arjuna.b23.com" {
+    type master;
+    file "/etc/bind/jarkom/arjuna";
+};
+```
+<br>
+Pada terminal :
+mkdir /etc/bind/jarkom
+cp /etc/bind/db.local /etc/bind/jarkom/arjuna
+nano /etc/bind/jarkom/arjuna
+
+<br>
+Pada /root/.bashrc  tambahkan: service bind9 restart
+Untuk pembuktiannya : 
+ Pada /etc/resolv.conf, masukkan nameserver IP Yudhistira 
+ nameserver 10.20.1.4
+Lalu ping domain dan alias yang telah dibuat
+
+<br>
 
 ## **Soal Nomor 3**
-Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
-- **Soal Nomor 3A :** <br>
-Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?<br>
-Jawaban : 21<br>
-<br>**Langkah Penyelesaian Soal 3A :** <br>
-  Kita buka **soal3.pcap** dan pada display capture di Wireshark ketik **(ip.src == 239.255.255.250 || ip.dst == 239.255.255.250) && udp.port == 3702** -> pilih Statistics -> Capture File Properties maka akan terlihat pada bagian banyak packet yang tercapture yakni pada Displayed untuk Packets sebagai berikut :
-![3(1)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/53f3109b-f58e-4757-b9f5-3b130f9afe3c)
-- **Soal Nomor 3B :** <br>
-Protokol layer transport apa yang digunakan?<br>
-Jawaban : UDP<br>
-<br>**Langkah Penyelesaian Soal 3B :** <br>
-  Untuk menyelesaikannya kita gunakan perintah ini pada Display Filter **(ip.src == 239.255.255.250 || ip.dst == 239.255.255.250) && udp.port == 3702** sehingga didapatkan:
-![3 (2)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c97c8122-eef0-4924-b7a5-41040b1a0bf0)
+Dengan cara yang sama seperti soal nomor 2, buatlah website utama dengan akses ke abimanyu.yyy.com dan alias www.abimanyu.yyy.com.
 
-Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban3](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f3ab4d0c-dd59-48b6-8230-fa213ba3a035) <br>
+<br>**Langkah Penyelesaian Soal 3 :** <br>
+	a). Pada /root/.bashrc  
+apt-get update
+		apt-get install bind9 -y
+	 b). Pembuatan Domain	
+Pada terminal Yudhistira ketik : nano /etc/bind/named.conf.local 
+Isi dengan : 
+```bash
+zone "abimanyu.b23.com" {
+    type master;
+    file "/etc/bind/jarkom/abimanyu";
+};
+```
+<br>
+Pada terminal :
+mkdir /etc/bind/jarkom
+cp /etc/bind/db.local /etc/bind/jarkom/abimanyu
+nano /etc/bind/jarkom/abimanyu
 
-## **Soal Nomor 4** <br>
-Berapa nilai checksum yang didapat dari header pada paket nomor 130?<br>
-Jawaban : 0x18e5 <br>
 
-**Langkah Penyelesaian Soal 4 :** 
-Kita lakukan filter Frame.number==130 lalu kita bisa langsung cek header checksumnya <br>
-![Foto](./img/Prak1No4.png)
+<br>
+Pada terminal : service bind9 restart
+Untuk pembuktiannya : 
+ Pada /etc/resolv.conf, masukkan nameserver IP Yudhistira 
+ nameserver 10.20.1.4
+Lalu ping domain yang telah dibuat
+Bukti : 
+
+## **Soal Nomor 4**
+Kemudian, karena terdapat beberapa web yang harus di-deploy, buatlah subdomain parikesit.abimanyu.yyy.com yang diatur DNS-nya di Yudhistira dan mengarah ke Abimanyu.
+
+<br>**Langkah Penyelesaian Soal 4 :** <br>
+a). Edit /etc/bind/jarkom/abimanyu di Yudhistira 
+	
+
+b). Pada terminal Yudhistira : service bind9 restart
+Bukti : 
 
 ## **Soal Nomor 5**
-Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.<br>
-Untuk melihat soal no 5 dapat dilakukan dengan beberapa tahap sebagai berikut :<br>
-1. Buka file soal5.pcap lalu pilih salah satu packet -> klik kanan-> pada Follow-> TCP Stream, lalu scroll ke bawah sampai anda menemukan suatu **password** sebagai berikut :<br>
-![password_soal5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/90d2e506-f0bc-4e1a-9335-a16a1fe21d28)
-2. Lalu buka website **base64decode** untuk melakukan decode pada password tadi.
-![decode_soal5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/fdae889a-375e-4a37-918f-51da50c9c4c8)
-3. Setelah itu download file **zippppfileee.zip** dan lakukan extract file yang nanti akan meminta anda untuk memasukkan password dalam prosesnya. Masukkan kode yang yang telah di-decode  tadi dan buka **/s3crett/connect.txt**. Nantinya kita akan melihat code untuk soal no.5 seperti berikut :<br>
-![code_soal5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c2aee069-75b9-4f68-958c-51f3bc20821e)
-- **Soal Nomor 5A :** <br>
-Berapa banyak packet yang berhasil di capture dari file pcap tersebut?<br>
-Jawaban : 60<br>
-**Langkah Penyelesaian Soal 5A :** <br>
-Pilih salah satu packet dan pada **statistic -> Capture File Properties** lihat barisan Packets dan pada bagian Captures didapatkan hasilnya sebagai berikut :
-![5(a)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/e105e18e-4c0b-4722-8eed-2aba714de703)
+Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)
 
-<br>- **Soal Nomor 5B :** <br>
-Port berapakah pada server yang digunakan untuk service SMTP?<br>
-Jawaban : 25<br>
-**Langkah Penyelesaian Soal 5B :** <br>
-Untuk soal ini, kita dapat melihatnya pada modul 1 sebagai berikut :<br>
-![gbr_modul](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/f0d7d0bd-2a0e-4cbb-a4cf-431cd38a31ac)
+<br>**Langkah Penyelesaian Soal 5 :** <br>
 
-<br>- **Soal Nomor 5C :** <br>
-Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?<br>
-Jawaban : 74.53.140.153<br>
-**Langkah Penyelesaian Soal 5C :** <br>
-Soal ini dapat dijawab dengan mengambil referensi dari **https://www.geeksforgeeks.org/difference-between-private-and-public-ip-addresses/** yang dimana dikatakan bahwa IP Private memiliki batas yakni:<br>
-- 10.0.0.0 – 10.255.255.255<br>
-- 172.16.0.0 – 172.31.255.255<br>
-- 192.168.0.0 – 192.168.255.255<br>
-selain dari range diatas dapat disimpulkan sebagai IP public dan hanya IP 74.53.140.153 yang ditemukan sebagai IP public.
-![5(c)](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/922ad409-a198-4db5-8f33-7cc6660fa89d)
-
-Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban5](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/71e5b3f2-902a-4e2e-8bec-89451af66ccd)
-
-## **Soal Nomor 6** <br>
-Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.<br>
-Jawaban : JDRNJA<br>
-**Langkah Penyelesaian Soal 6 :**
-Disini kita memiliki dua clue yaitu server SOURCE ADDRESS 7812 is invalid dan a1 e5 u21 <br>
-server SOURCE ADDRESS 7812 : dari sini kita hanya perlu melihat source address paket nomor 7812<br>
-a1 e5 u21 : dan untuk ini kita tau bahwa a adalah huruf 1 dalam alfabet, e huruf ke 5 dalam alfabet, dan juga u huruf ke 21 dalam alfabet. Jadi dapat disimpulkan kita harus mengubah angka menjadi alfabet<br>
+	a). Pada terminal Yudhistira ketik : nano /etc/bind/named.conf.local 
+Isi dengan : 
+```bash
+zone "3.20.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/jarkom/reverseabimanyu";
+};
+```
 <br>
-Jadi yang pertama kita lakukan adalah melakukan search filter yaitu frame.number==7812<br>
-![Foto](./img/Prak1No6.png)
-Lalu kita cek source addressnya yaitu 104.18.14.101. kita akan lakukan perubahan menjadi alfabet yang sudah diketahui pada clue kedua.<br>
-10 = J<br>
-4 = D<br>
-18 = R<br>
-14 = N<br>
-10 = J<br>
-1 = A<br>
-Maka hasilnya adalah JDRNJA<br>
+b). Copy-kan file db.local : cp /etc/bind/db.local /etc/bind/jarkom/reverseabimanyu
+	c). Lalu edit file reverseabimanyu
+
+<br>
+d).  Pada terminal : service bind9 restart
+e).  Pada terminal Nakula dan tambahkan isi /root/.bashrc : 
+apt-get update
+apt-get install dnsutils
+Bukti : 
+	Terminal Nakula ketik : host -t PTR 10.20.3.3
 
 
+## **Soal Nomor 6**
+Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga Werkudara sebagai DNS Slave untuk domain utama.
+
+<br>**Langkah Penyelesaian Soal 6 :** <br>
+	a).  Pada terminal Yudhistira, edit /etc/bind/named.conf.local 
+		```bash
+		zone "arjuna.b23.com" {
+    type master;
+    notify yes;
+    also-notify {10.20.1.5 ; };
+    allow-transfer { 10.20.1.5 ; }; 
+    file "/etc/bind/jarkom/arjuna";
+};
+
+zone "abimanyu.b23.com" {
+    type master;
+    notify yes;
+    also-notify {10.20.1.5 ; };
+    allow-transfer { 10.20.1.5 ; }; 
+    file "/etc/bind/jarkom/abimanyu";
+};
+```
+<br>
+	  b). Pada terminal : service bind9 restart
+	 c). Konfigurasi Werkudara
+ Pada terminal dan simpan di /root : apt-get update
+     apt-get install bind9 -y
+Tambahkan syntax di /etc/bind/named.conf.local 
+	```bash
+	zone "arjuna.b23.com" {
+    type slave;
+    masters {10.20.1.4; };
+    file "/var/lib/bind/jarkom/arjuna";
+
+zone "abimanyu.b23.com" {
+    type slave;
+    masters {10.20.1.4; };
+    file "/var/lib/bind/jarkom/abimanyu";
+};
+```
+	<br>
+Pada terminal : service bind9 restart
+	Bukti : 1. Lakukan  service bind9 stop di Yudhistira
+		2. Lakukan pengaturan nameserver dengan menambahkan isi  /etc/resolv.conf di Nakula  : nameserver 10.20.1.4
+				    nameserver 10.20.1.5
+		3. Lalu ping arjuna atau abimanyu
 
 ## **Soal Nomor 7**
-Berapa jumlah packet yang menuju IP 184.87.193.88?<br>
-Jawaban : 6<br>
+Seperti yang kita tahu karena banyak sekali informasi yang harus diterima, buatlah subdomain khusus untuk perang yaitu baratayuda.abimanyu.yyy.com dengan alias www.baratayuda.abimanyu.yyy.com yang didelegasikan dari Yudhistira ke Werkudara dengan IP menuju ke Abimanyu dalam folder Baratayuda.
+
 <br>**Langkah Penyelesaian Soal 7 :** <br>
-Karena kita ingin menghitung jumlah packet yang **menuju** ke IP 184.87.193.88 maka kita menggunakan  dst(untuk destination) dengan mengetikkan pada Display Filter **ip.dst == 184.87.193.88** -> statistic -> Capture File Properties.
-![7](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/b74cc045-0c67-45ac-a0a6-3300c6d40375)
+	a). Konfigurasi pada Yudhistira
+edit /etc/bind/jarkom/abimanyu
+
 <br>
-<br>Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban7](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/c70b0ded-2068-4947-92da-c3ae441ce525)<br>
-## **Soal Nomor 8** <br>
-Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)<br>
-Jawaban : tcp.dstport == 80 || udp.dstport == 80<br>
-**Langkah Penyelesaian Soal 8 :** <br>
-kita lakukan filter tcp.dstport == 80 || udp.dstport == 80 karena kita mengambil semua protokol jadi kita lakukan tcp dan udp <br>
-![Foto](./img/Prak1No8.png)
+Edit  /etc/bind/named.conf.options dengan comment dan tambahkan baris seperti gambar
+
+<br>
+Pada terminal : service bind9 restart
+
+b). Konfigurasi pada Werkudara
+Edit  /etc/bind/named.conf.options dengan comment dan tambahkan baris seperti gambar
+
+<br>
+Tambahkan pada /etc/bind/named.conf.local 
+```bash
+	zone "baratayuda.abimanyu.b23.com" {
+    type master;
+    file "/var/lib/bind/delegasi/baratayuda";
+};
+```
+<br>
+Pada terminal : 
+mkdir /etc/bind/delegasi
+cp /etc/bind/db.local /etc/bind/delegasi/baratayuda
+
+<br>
+Pada terminal : service bind9 restart
+
+Bukti : 
+
+## **Soal Nomor 8**
+Untuk informasi yang lebih spesifik mengenai Ranjapan Baratayuda, buatlah subdomain melalui Werkudara dengan akses rjp.baratayuda.abimanyu.yyy.com dengan alias www.rjp.baratayuda.abimanyu.yyy.com yang mengarah ke Abimanyu.
+
+<br>**Langkah Penyelesaian Soal 8 :** <br>
+a). Edit /etc/bind/delegasi/baratayuda di Werkudara
+	
+
+b). Pada terminal Werkudara: service bind9 restart
+
+Bukti :  
+
 
 ## **Soal Nomor 9**
-Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!<br>
-Jawaban :  ip.src == 10.51.40.1 && ip.dst != 10.39.55.34<br>
-<br>**Langkah Penyelesaian Soal 9 :** <br>
-Untuk mengambil packet yang berasal dari alamat 10.51.40.1 dilakukan sebagai berikut : <br>**ip.src == 10.51.40.1** dan untuk packet yang tidak menuju ke alamat 10.39.55.34 dilakukan dengan : **ip.dst != 10.39.55**. Lalu, karena diminta untuk menerapkan syarat keduanya maka dapat dituliskan pada Display Filter : **ip.src == 10.51.40.1 && ip.dst != 10.39.55.34**
-![9](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/8b77f15d-e96e-42c4-8fc0-754cdcc96552)
-<br>
-<br>Berikut merupakan hasil jawaban pada terminal :<br>
-![jawaban9](https://github.com/lalaladi/Jarkom-Modul-1-B23-2023/assets/90541607/659e9755-67e9-465a-bd90-b63c679d6a77) 
+Arjuna merupakan suatu Load Balancer Nginx dengan tiga worker (yang juga menggunakan nginx sebagai webserver) yaitu Prabakusuma, Abimanyu, dan Wisanggeni. Lakukan deployment pada masing-masing worker.
 
-## **Soal Nomor 10** <br>
-Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet<br>
-Jawaban : dhafin:kesayangank0k0<br>
-**Langkah Penyelesaian Soal 10 :**
-Kita lakukan filter dengan telnet, lalu kita coba coba terhadap hasil filterannya dan lakukan follow tcp stream, lalu mendapatkan hasil seperti dibawah ini<br>
-![Foto](./img/Prak1No10.png)
+<br>**Langkah Penyelesaian Soal 9 ** <br>
+Pada 3 Nginx diatas, lakukan hal yang sama:
+	a). Pada terminal dan /root/.bashrc : 
+		 apt-get update && apt install nginx php php-fpm -y
+	c). Pada terminal : 
+		 mkdir /var/www/arjuna.b23.com
+	d). Masuk ke directory /var/www/arjuna.b23.com dan buat file index.php yang berisi : 
+	```bash
+	 <?php
+ echo "Halo, Kamu berada di Prabukusuma"; #ganti sesuai node
+ ?>
+```
+<br>
+e). Masuk ke directory /etc/nginx/sites-available dan nano arjuna dengan isi 
+```bash
+server {
+
+ 	listen 80;
+
+ 	root /var/www/arjuna.b23.com;
+
+ 	index index.php index.html index.htm;
+ 	server_name _;
+
+ 	location / {
+ 			try_files $uri $uri/ /index.php?$query_string;
+ 	}
+
+ 	# pass PHP scripts to FastCGI server
+ 	location ~ \.php$ {
+ 	include snippets/fastcgi-php.conf;
+ 	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+ 	}
+
+ location ~ /\.ht {
+ 			deny all;
+ 	}
+
+ 	error_log /var/log/nginx/arjuna_error.log;
+ 	access_log /var/log/nginx/arjuna_access.log;
+ }
+```
+<br>
+f). Pada terminal : 
+ln -s /etc/nginx/sites-available/arjuna /etc/nginx/sites-enabled
+ service nginx restart
+Bukti : 
+ nginx -t pada tiap nginx worker
+
+
+
+	
+## **Soal Nomor 10**
+Kemudian gunakan algoritma Round Robin untuk Load Balancer pada Arjuna. Gunakan server_name pada soal nomor 1. Untuk melakukan pengecekan akses alamat web tersebut kemudian pastikan worker yang digunakan untuk menangani permintaan akan berganti ganti secara acak. Untuk webserver di masing-masing worker wajib berjalan di port 8001-8003. Contoh
+    - Prabakusuma:8001
+    - Abimanyu:8002
+    - Wisanggeni:8003
+
+<br>**Langkah Penyelesaian Soal 10 ** <br>
+	a). Pada terminal Arjuna dan simpan di /root/.bashrc 
+		apt-get update
+apt-get install nginx
+b). Pada terminal : service nginx start
+    service nginx status
+			    Cd /etc/nginx/sites-available
+			    Nsno lb-arjuna :
+
+<br>
+c). Pada tiap masing-masing worker : 
+Prabukusuma
+masuk ke directory /etc/nginx/sites-available dan nano arjuna dengan isi
+```bash
+server {
+
+ 	listen 8001; #sesuai port yang ada di soal
+
+ 	root /var/www/arjuna.b23.com;
+
+ 	index index.php index.html index.htm;
+ 	server_name _;
+
+ 	location / {
+ 			try_files $uri $uri/ /index.php?$query_string;
+ 	}
+
+ 	# pass PHP scripts to FastCGI server
+ 	location ~ \.php$ {
+ 	include snippets/fastcgi-php.conf;
+ 	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+ 	}
+
+ location ~ /\.ht {
+ 			deny all;
+ 	}
+
+ 	error_log /var/log/nginx/arjuna.log;
+ 	access_log /var/log/nginx/arjuna_access.log;
+ }
+```
+<br>
+
+Abimanyu
+masuk ke directory /etc/nginx/sites-available dan nano arjuna dengan isi
+```bash
+server {
+
+ 	listen 8002; #sesuai port yang ada di soal
+
+ 	root /var/www/arjuna.b23.com;
+
+ 	index index.php index.html index.htm;
+ 	server_name _;
+
+ 	location / {
+ 			try_files $uri $uri/ /index.php?$query_string;
+ 	}
+
+ 	# pass PHP scripts to FastCGI server
+ 	location ~ \.php$ {
+ 	include snippets/fastcgi-php.conf;
+ 	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+ 	}
+
+ location ~ /\.ht {
+ 			deny all;
+ 	}
+
+ 	error_log /var/log/nginx/arjuna.log;
+ 	access_log /var/log/nginx/arjuna_access.log;
+ }
+```
+<br>
+
+Wisanggeni
+masuk ke directory /etc/nginx/sites-available dan nano arjuna dengan isi
+```bash
+server {
+
+ 	listen 8003; #sesuai port yang ada di soal
+
+ 	root /var/www/arjuna.b23.com;
+
+ 	index index.php index.html index.htm;
+ 	server_name _;
+
+ 	location / {
+ 			try_files $uri $uri/ /index.php?$query_string;
+ 	}
+
+ 	# pass PHP scripts to FastCGI server
+ 	location ~ \.php$ {
+ 	include snippets/fastcgi-php.conf;
+ 	fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+ 	}
+
+ location ~ /\.ht {
+ 			deny all;
+ 	}
+
+ 	error_log /var/log/nginx/arjuna.log;
+ 	access_log /var/log/nginx/arjuna_access.log;
+ }
+```
+<br>
+
+c). Pada terminal :  
+ln -s /etc/nginx/sites-available/lb-arjuna /etc/nginx/sites-enabled
+service nginx restart
+Bukti : 
+Pada Nakula, install lynx dan simpan di /root/.bashrc
+apt-get update
+apt-get install lynx
+Lynx http://10.20.3.1:8001
+
+
+
 
 # **Kendala Selama Pengerjaan**
 Berikut merupakan beberapa kendala dan kesulitan yang kami alami dalam pengerjaan Praktikum Modul 1 Jaringan Komputer, yakni :
